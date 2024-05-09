@@ -4,7 +4,7 @@ import { IoMdClose } from "react-icons/io";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { MdOutlineSchedule } from "react-icons/md";
 
-export const Modal = ({ setOpen }) => {
+export const Modal2 = ({ setOpen }) => {
   return (
     <Container>
       <ModalContent>
@@ -14,41 +14,50 @@ export const Modal = ({ setOpen }) => {
         >
           <IoMdClose size={30} cursor="pointer" />
         </div>
-        <h3>Какие умения даёт уровень:</h3>
-        <Rows1>
+
+        <Column>
           <div>
-            <ul>
-              <li>задать простые вопросы</li>
-              <li>попросить о помощи</li>
-              <li>узнать, как куда-то добраться</li>
-              <li>купить билет</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li>сделать заказ в ресторане и покупку в магазине</li>
-              <li>забронировать гостиницу</li>
-            </ul>
-          </div>
-        </Rows1>
-        <h3>Вы будете знать:</h3>
-        <Rows1>
-          <div>
-            <ul>
-              <li>времена — настоящее, прошедшее, будущее.</li>
-              <li>700 слов и выражений;</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
+            <h3>Говорить:</h3>
+            <Rows1>
+              <li>Выражать простые мысли о себе, своих друзьях и семье</li>
               <li>
-                С полного нуля — 32 занятия. Это 4 месяца при двух занятиях в
-                неделю.
+                Задавать и отвечать на вопросы о своих интересах и потребностях.
               </li>
-              <li>Если вы знаете многое в теории — 16-20 занятий.</li>
-            </ul>
+            </Rows1>
           </div>
-        </Rows1>
+
+          <div>
+            <h3>Читать:</h3>
+            <Rows1>
+              <li>
+                Читать короткие и простые тексты, например, объявления, письма и
+                расписания.
+              </li>
+            </Rows1>
+          </div>
+        </Column>
+
+        <Column>
+          <div>
+            <h3>Писать:</h3>
+            <Rows1>
+              <li>
+                Писать короткие сообщения и письма, например, благодарности и
+                приглашения.
+              </li>
+            </Rows1>
+          </div>
+
+          <div>
+            <h3>Слушать:</h3>
+            <Rows1>
+              <li>
+                Понимать простую информацию в разговорах, если говорят медленно
+                и четко.
+              </li>
+            </Rows1>
+          </div>
+        </Column>
 
         <div
           style={{
@@ -93,7 +102,7 @@ const ModalContent = styled("div")`
   width: 80vw;
   border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  padding: 2.5rem;
+  padding: 1.5rem;
 
   background-color: #fefefe;
   position: absolute;
@@ -103,24 +112,24 @@ const ModalContent = styled("div")`
 
   h3 {
     font-weight: 800;
-    font-size: 30px;
+    font-size: 25px;
     color: #f16600;
   }
 `;
 
-const Rows1 = styled("div")`
+const Rows1 = styled("ul")`
+  font-size: 16px;
   display: flex;
-  justify-content: space-between;
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    font-size: 20px;
-  }
+  flex-direction: column;
+  gap: 1rem;
+  width: 38vw;
 `;
 
 const Price = styled("p")`
   font-size: 20px;
   font-weight: 800;
+`;
+
+const Column = styled("div")`
+  display: flex;
 `;

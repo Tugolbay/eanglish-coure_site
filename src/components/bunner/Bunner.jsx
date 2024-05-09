@@ -1,36 +1,51 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Bunner = () => {
   return (
-    <Container>
+    <Container id="id5">
       <Row>
         <div>
-          <h1>Курс английского языка Bee Free</h1>
-          <p>Выпустили более 3000 студентов</p>
-          <p>
+          <motion.h1
+            initial={{ x: -400, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            Курс английского языка Bee Free
+          </motion.h1>
+          <motion.p
+            initial={{ x: -400, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            Выпустили более 3000 студентов
+          </motion.p>
+          <motion.p
+            initial={{ x: -400, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.7 }}
+          >
             Обустроили{" "}
             <a href="https://www.instagram.com/befree.work_/">@befree.work_</a>
-          </p>
+          </motion.p>
         </div>
-
-        <img
-          src="https://eng.skillbox.ru/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwoman.9e559e47.png&w=1920&q=75"
-          alt="img"
-        />
       </Row>
     </Container>
   );
 };
 
 const Container = styled("div")`
+  display: flex;
   width: 100%;
+  height: 30rem;
   padding-top: 10rem;
 `;
 
 const Row = styled("div")`
   display: flex;
   align-items: center;
+  padding-left: 5rem;
 
   h1 {
     margin: 0;

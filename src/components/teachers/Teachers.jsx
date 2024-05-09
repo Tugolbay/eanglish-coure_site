@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Teachers = () => {
   const data = [
@@ -35,8 +36,14 @@ export const Teachers = () => {
     },
   ];
   return (
-    <Container>
-      <h1>Наши учителя</h1>
+    <Container id="id1">
+      <motion.h1
+        initial={{ x: -400, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        Наши учителя
+      </motion.h1>
 
       <ContainerChilde>
         {data.map((el) => (
@@ -61,13 +68,31 @@ const Container = styled("div")`
     font-size: 60px;
     padding-bottom: 1rem;
   }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 45px;
+    }
+  }
+
+  @media (max-width: 542px) {
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    h1 {
+      font-size: 35px;
+    }
+  }
 `;
 
 const Cart = styled("div")`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 25vw;
+  width: 22vw;
   border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   padding: 1.5rem;
@@ -85,17 +110,55 @@ const Cart = styled("div")`
     background-color: #f16600;
     padding: 0.5rem 2rem 0.5rem 2rem;
   }
+
+  @media (max-width: 988px) {
+    width: 35vw;
+  }
+
+  @media (max-width: 800px) {
+    width: 30vw;
+  }
+
+  @media (max-width: 600px) {
+    width: 75vw;
+    height: 55vh;
+
+    h2 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 465px) {
+    height: 45vh;
+  }
+
+  @media (max-width: 380px) {
+    height: 35vh;
+
+    h2 {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
 `;
 
 const Row3 = styled("div")`
   img {
-    width: 25vw;
+    width: 100%;
     border-radius: 15px;
   }
 `;
 
 const ContainerChilde = styled("div")`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
 `;

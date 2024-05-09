@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./Slider.css";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Office = () => {
   const galleryContainerRef = useRef(null);
@@ -79,8 +80,15 @@ export const Office = () => {
   }, []);
 
   return (
-    <Container>
-      <h1>Наш офис</h1>
+    <Container id="id3">
+      <motion.h1
+        initial={{ x: -400, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        Наш офис
+      </motion.h1>
+
       <div className="container">
         <div ref={galleryContainerRef} className="gallery">
           <div className="gallery-container">
@@ -137,5 +145,23 @@ const Container = styled("div")`
   h1 {
     font-size: 60px;
     padding-bottom: 1rem;
+  }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 45px;
+    }
+  }
+
+  @media (max-width: 542px) {
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    h1 {
+      font-size: 35px;
+    }
   }
 `;
