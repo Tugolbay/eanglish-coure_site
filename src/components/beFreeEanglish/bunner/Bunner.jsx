@@ -95,7 +95,7 @@ const Row = styled("div")`
 
   img {
     width: 35vw;
-    margin-top: 8rem;
+    margin-top: 9rem;
   }
 
   @media (max-width: 1100px) {

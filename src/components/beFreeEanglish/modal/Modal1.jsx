@@ -112,7 +112,6 @@ const Container = styled("div")`
 `;
 
 const ModalContent = styled("div")`
-  width: 80vw;
   border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   padding: 1.5rem;
@@ -136,6 +135,12 @@ const Rows1 = styled("ul")`
   flex-direction: column;
   gap: 1rem;
   width: 38vw;
+
+  @media (max-width: 1040px) {
+    li {
+      width: 35vw;
+    }
+  }
 `;
 
 const Price = styled("p")`
