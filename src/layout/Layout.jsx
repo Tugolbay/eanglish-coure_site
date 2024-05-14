@@ -11,6 +11,7 @@ import { Office } from "../components/beFreeEanglish/ourOffice/Office";
 
 import { Adress } from "../components/beFreeEanglish/adress/Adress";
 import { Questions } from "../components/beFreeEanglish/questions/Questions";
+import { InfoPage } from "../components/beFreeEanglish/infoPage/InfoPage";
 
 export const Layout = () => {
   const [language, setLanguage] = useState("ru");
@@ -20,6 +21,7 @@ export const Layout = () => {
       <Header setLanguage={setLanguage} language={language} />
       <Bunner language={language} />
       <English />
+      <InfoPage />
       <Discount />
       <Main />
       <Teachers />

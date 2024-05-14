@@ -76,8 +76,7 @@ const Container = styled("div")`
   display: flex;
   justify-content: center;
   margin-top: 15rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 1rem 0 1rem;
 
   div {
     display: flex;
