@@ -1,72 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const English = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Container>
       <div>
-        <motion.h2
-          initial={{ x: 400, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {t("english.title1")}:
-        </motion.h2>
-        <motion.p
-          initial={{ x: -400, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {t("english.text1")}
-        </motion.p>
+        <h2 data-aos="fade-right">{t("english.title1")}:</h2>
+        <p data-aos="fade-right">{t("english.text1")}</p>
 
-        <motion.h2
-          initial={{ x: 400, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {t("english.title2")}:
-        </motion.h2>
-        <motion.p
-          initial={{ x: -400, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {t("english.text2")}
-        </motion.p>
+        <h2 data-aos="fade-right">{t("english.title2")}:</h2>
+        <p data-aos="fade-right">{t("english.text2")}</p>
 
-        <motion.h2
-          initial={{ x: 400, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {t("english.title3")}:
-        </motion.h2>
-        <motion.p
-          initial={{ x: -400, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {t("english.text3")}
-        </motion.p>
+        <h2 data-aos="fade-right">{t("english.title3")}:</h2>
+        <p data-aos="fade-right">{t("english.text3")}</p>
 
-        <motion.h2
-          initial={{ x: 400, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {t("english.title4")}:
-        </motion.h2>
-        <motion.p
-          initial={{ x: -400, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {t("english.text4")}
-        </motion.p>
+        <h2 data-aos="fade-right">{t("english.title4")}:</h2>
+        <p data-aos="fade-right">{t("english.text4")}</p>
       </div>
     </Container>
   );

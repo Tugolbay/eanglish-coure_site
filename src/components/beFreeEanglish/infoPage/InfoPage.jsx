@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import CountUp from "react-countup";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const InfoPage = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Container>
       <div>
-        <Title>
+        <Title data-aos="fade-right">
           <CountUp
             style={{
               fontSize: "38px",
@@ -18,11 +24,11 @@ export const InfoPage = () => {
             duration={2.5}
           />
         </Title>
-        <Desc>лет</Desc>
-        <Text>на рынке</Text>
+        <Desc data-aos="fade-right">лет</Desc>
+        <Text data-aos="fade-right">на рынке</Text>
       </div>
       <div>
-        <Title>
+        <Title data-aos="fade-right">
           <CountUp
             style={{
               fontSize: "38px",
@@ -34,11 +40,11 @@ export const InfoPage = () => {
             duration={2.5}
           />
         </Title>
-        <Desc>квалифицированных</Desc>
-        <Text>преподавателей</Text>
+        <Desc data-aos="fade-right">квалифицированных</Desc>
+        <Text data-aos="fade-right">преподавателей</Text>
       </div>
       <div>
-        <Title>
+        <Title data-aos="fade-right">
           <CountUp
             style={{
               fontSize: "38px",
@@ -51,11 +57,11 @@ export const InfoPage = () => {
             duration={2.5}
           />
         </Title>
-        <Desc>студентов</Desc>
-        <Text>по рекомендациям</Text>
+        <Desc data-aos="fade-right">студентов</Desc>
+        <Text data-aos="fade-right">по рекомендациям</Text>
       </div>
       <div>
-        <Title>
+        <Title data-aos="fade-right">
           <CountUp
             style={{
               fontSize: "38px",
@@ -67,11 +73,11 @@ export const InfoPage = () => {
             duration={2.5}
           />
         </Title>
-        <Desc>авторских</Desc>
-        <Text>программ обучения</Text>
+        <Desc data-aos="fade-right">авторских</Desc>
+        <Text data-aos="fade-right">программ обучения</Text>
       </div>
       <div>
-        <Title>
+        <Title data-aos="fade-right">
           <CountUp
             start={0}
             end={3000}
@@ -83,8 +89,8 @@ export const InfoPage = () => {
             }}
           />
         </Title>
-        <Desc>студентов</Desc>
-        <Text>достигли цели</Text>
+        <Desc data-aos="fade-right">студентов</Desc>
+        <Text data-aos="fade-right">достигли цели</Text>
       </div>
     </Container>
   );

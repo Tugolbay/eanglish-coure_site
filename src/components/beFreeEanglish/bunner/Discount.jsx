@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Countdown from "../header/Discount";
 import { useTranslation } from "react-i18next";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Discount = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Container>
-      <Title>{t("discount.title2")}:</Title>
+      <Title data-aos="fade-right">{t("discount.title2")}:</Title>
       <Row>
         <Countdown />
       </Row>

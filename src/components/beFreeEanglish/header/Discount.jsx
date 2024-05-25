@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Countdown = () => {
   const [days, setDays] = useState(0);
@@ -40,27 +42,31 @@ const Countdown = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div>
       <Text>
         <div>
-          <Desc>{days}</Desc>
-          <Day>days</Day>
+          <Desc data-aos="fade-right">{days}</Desc>
+          <Day data-aos="fade-right">days</Day>
         </div>
 
         <div>
-          <Desc>{hours}</Desc>
-          <Day>Hours</Day>
+          <Desc data-aos="fade-right">{hours}</Desc>
+          <Day data-aos="fade-right">Hours</Day>
         </div>
 
         <div>
-          <Desc>{minutes}</Desc>
-          <Day>Minutes</Day>
+          <Desc data-aos="fade-right">{minutes}</Desc>
+          <Day data-aos="fade-right">Minutes</Day>
         </div>
 
         <div>
-          <Desc>{seconds}</Desc>
-          <Day>Seconds</Day>
+          <Desc data-aos="fade-right">{seconds}</Desc>
+          <Day data-aos="fade-right">Seconds</Day>
         </div>
       </Text>
     </div>

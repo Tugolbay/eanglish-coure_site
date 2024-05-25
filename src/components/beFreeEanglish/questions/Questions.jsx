@@ -4,20 +4,19 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Questions = () => {
   const { t } = useTranslation();
+
+  React.useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Container>
-      <motion.h1
-        initial={{ x: -400, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        {t("description5")}
-      </motion.h1>
+      <h1 data-aos="fade-right">{t("description5")}</h1>
 
       <Block>
         <Accordion>
@@ -110,6 +109,10 @@ export const Questions = () => {
           >
             Готовите ли вы к международным языковым экзаменам ?
           </AccordionSummary>
+          <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </AccordionDetails>
         </Accordion>
       </Block>
     </Container>

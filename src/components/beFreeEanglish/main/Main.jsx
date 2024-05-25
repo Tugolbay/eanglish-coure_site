@@ -8,8 +8,9 @@ import { Modal3 } from "../modal/Modal3";
 import { Modal4 } from "../modal/Modal4";
 import { Modal5 } from "../modal/Modal5";
 import { Modal6 } from "../modal/Modal6";
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Main = () => {
   const { t } = useTranslation();
@@ -32,6 +33,10 @@ export const Main = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+  }, []);
+
+  useEffect(() => {
+    AOS.init();
   }, []);
 
   const data = [
@@ -84,13 +89,7 @@ export const Main = () => {
 
   return (
     <Container id="id6">
-      <motion.h1
-        initial={{ x: -400, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        {t("description1")}
-      </motion.h1>
+      <h1 data-aos="fade-right">{t("description1")}</h1>
 
       <div className="slide-container">
         <Slide {...settings}>

@@ -6,7 +6,9 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -95,15 +97,13 @@ export const Teachers = () => {
     setValue(newValue);
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Container id="id1">
-      <motion.h1
-        initial={{ x: -400, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        {t("description2")}
-      </motion.h1>
+      <h1 data-aos="fade-right">{t("description2")}</h1>
 
       <Box sx={{ width: "100%" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>

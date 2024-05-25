@@ -1,57 +1,39 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { SpeedDials } from "./SpeedDial";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Bunner = ({ language }) => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Container id="id5">
       <Row>
         <div>
           {language === "ru" ? (
-            <motion.h1
-              initial={{ x: -400, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {t("bunner.title")} Bee free
-            </motion.h1>
+            <h1 data-aos="fade-right">{t("bunner.title")} Bee free</h1>
           ) : (
-            <motion.h1
-              initial={{ x: -400, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              Bee free {t("bunner.title")}
-            </motion.h1>
+            <h1 data-aos="fade-right">Bee free {t("bunner.title")}</h1>
           )}
 
-          <motion.p
-            initial={{ x: -400, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            {t("bunner.text1")}
-          </motion.p>
-          <motion.p
-            initial={{ x: -400, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
-          >
+          <p data-aos="fade-right">{t("bunner.text1")}</p>
+          <p data-aos="fade-right">
             {t("bunner.text2")}{" "}
             <a href="https://www.instagram.com/befree.work_/" target="_blank">
               @befree.work_
             </a>
-          </motion.p>
+          </p>
         </div>
 
-        <motion.img
-          initial={{ x: 400, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+        <img
+          data-aos="fade-left"
           src="https://ienglish.ru/assets/basetheme-design/images/personal-teacher.png"
           alt="img"
         />
