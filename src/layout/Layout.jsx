@@ -5,10 +5,8 @@ import { English } from "../components/beFreeEanglish/bunner/English";
 import { Discount } from "../components/beFreeEanglish/bunner/Discount";
 import { Main } from "../components/beFreeEanglish/main/Main";
 import { Teachers } from "../components/beFreeEanglish/teachers/Teachers";
-
 import { Contact } from "../components/beFreeEanglish/contact/Contact";
 import { Office } from "../components/beFreeEanglish/ourOffice/Office";
-
 import { Adress } from "../components/beFreeEanglish/adress/Adress";
 import { Questions } from "../components/beFreeEanglish/questions/Questions";
 import { InfoPage } from "../components/beFreeEanglish/infoPage/InfoPage";
@@ -26,13 +24,7 @@ export const Layout = () => {
       <Main />
       <Teachers />
       <Contact />
-
-      {/* --------------------------------- */}
-
-      {/* <Office /> */}
-
-      {/* --------------------------------- */}
-
+      <Office />
       <Adress />
       <Questions />
     </div>
